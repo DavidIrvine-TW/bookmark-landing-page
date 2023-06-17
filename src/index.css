@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.menu-desktop {
+  display: none;
+}
+
+/* hamburger menu */
+
+
+.hamburger-menu:hover {
+  transform: scale(1.1);
+}
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 15px;
+  width: 18px;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.hamburger-menu span {
+  width: 18px;
+  height: 3px;
+  background-color: hsl(240, 6%, 54%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.hamburger-menu:hover span,
+.hamburger-menu.cross:hover span {
+  background-color: hsl(231, 69%, 60%);
+}
+
+.hamburger-menu.cross:hover span:nth-child(1),
+.hamburger-menu.cross:hover span:nth-child(3) {
+  background-color: hsl(231, 69%, 60%);
+}
+
+.hamburger-menu.cross span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+  background-color: hsl(0, 94%, 66%);
+}
+
+.hamburger-menu.cross span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.cross span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  background-color: hsl(0, 94%, 66%);
+}
+
+@media screen and (min-width: 768px) {
+  .hamburger-menu {
+    display: none;
+  }
+  .menu-desktop {
+    display: initial;
+  }
+}
+
+/* button box shadow */
+
+.hero-btn {
+  box-shadow: 1px 5px 10px hsla(229, 8%, 60%, 0.7);
+}
+/* cards box shadow */
+.card{
+  box-shadow: 1px 1px 10px hsla(229, 8%, 60%, 0.7);
+}
+
+/* slider animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 0.5s ease-in forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.answer{
+  transition: .5s ease-in-out;
+}
